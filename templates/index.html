@@ -1,0 +1,39 @@
+{% extends 'layouts.html' %}
+
+{% block content %}
+
+    <h3>
+        Login
+    </h3>
+
+    <form action="/login" method="post">
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit" value="login">
+    </form>
+
+    <br>
+
+
+    <dialog id="dialog">
+        <form id="create_account">
+            <input type="text" name="first_name" placeholder="first name">
+            <input type="text" name="last_name" placeholder="last name">
+            <input type="text" name="username" placeholder="choose a username">
+            <input type="email" name="email" placeholder="email address">
+            <input type="password" name="password" placeholder="password">
+            <input type="password" name="check_password" placeholder="check password">
+            <input type="submit" value="create account">
+        </form>
+        <form method="dialog">
+            <button>cancel</button>
+        </form>
+
+        <h4 id="create_fail_message"></h4>
+    </dialog>
+
+
+    <button onclick="dialog.showModal()">Create an account</button>
+
+
+{% endblock %}
